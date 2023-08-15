@@ -65,12 +65,13 @@ install(TARGETS InstaOrder
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    FILES $<TARGET_RUNTIME_DLLS:InstaOrder> TYPE BIN
 )
 
-add_custom_command(TARGET InstaOrder
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:InstaOrder> $<TARGET_FILE_DIR:InstaOrder>
-    COMMAND_EXPAND_LISTS
-)
+# add_custom_command(TARGET InstaOrder
+#     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:InstaOrder> $<TARGET_FILE_DIR:InstaOrder>
+#     COMMAND_EXPAND_LISTS
+# )
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(InstaOrder)
