@@ -28,11 +28,11 @@ jobs:
 
       - name: Build Project
         working-directory: ./build
-        run: cmake --build . -DCMAKE_INSTALL_PREFIX=./install
+        run: cmake --build . 
 
       - name: install Project
         working-directory: ./build
-        run: cmake install
+        run: cmake -DCMAKE_INSTALL_PREFIX=./install --install
       
       - name: upload result
         uses: actions/upload-artifact@v1
