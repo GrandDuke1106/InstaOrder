@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Project
         working-directory: ./build
-        run: cmake --build . --config Release
+        run: cmake --build . 
         
       - name: upload result
         uses: actions/upload-artifact@v1
