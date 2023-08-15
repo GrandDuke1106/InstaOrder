@@ -67,8 +67,8 @@ install(TARGETS InstaOrder
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-add_custom_command(TARGET exe InstaOrder
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:exe> $<TARGET_FILE_DIR:exe>
+add_custom_command(TARGET InstaOrder ReleaseRelease
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:InstaOrder> $<TARGET_FILE_DIR:InstaOrder>
     COMMAND_EXPAND_LISTS
 )
 
