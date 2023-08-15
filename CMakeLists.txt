@@ -67,7 +67,6 @@ install(TARGETS InstaOrder
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-install(FILES $<TARGET_RUNTIME_DLLS:InstaOrder> TYPE BIN)
 
 # add_custom_command(TARGET InstaOrder
 #     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:InstaOrder> $<TARGET_FILE_DIR:InstaOrder>
