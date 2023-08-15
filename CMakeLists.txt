@@ -67,6 +67,11 @@ install(TARGETS InstaOrder
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
+add_custom_command(TARGET exe InstaOrder
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:exe> $<TARGET_FILE_DIR:exe>
+    COMMAND_EXPAND_LISTS
+)
+
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(InstaOrder)
 endif()
